@@ -1,0 +1,26 @@
+---
+title: "Prediction of the Election if every one votes with MPR model"
+author: "Tenglong Mai 1005177773"
+date: "22/12/2020"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+# Introduction
+
+According to CBC, Canada's 2019 election has 65.95 percent of eligible voters participate in this election. The result shows that the leader of the liberal party, Justin Trudeau won the election with 184 seats, which is 39.47% of the Vote. What if all eligible voters of Canada will vote for the election in 2019, will the result different? What likelihood will the Prime Minister of Canada be someone else? For this final project, I will focus on this question and do the analysis, which to build an MRP model based on the CES and a post-stratification dataset that I will obtain from the recent Census Data to figure out the result on the question.
+There are many datasets I will use to do the analysis, and I have confirmed two of them, which are the survey from the Canadian Election survey and the Stat Canadian 2016 Education Census. The CES is required to use in this project and the data source from the Stat Canadian 2016 Education Census can be used for Post-Stratification Data through the pivot. There will be some more dataset I will use for this project and I am still finding it to make sure it is valid and reliable.
+
+# Data
+```{r,echo=FALSE}
+library(cesR)
+library(labelled)
+
+get_ces("ces2019_web")
+ces2019_web<-to_factor(ces2019_web)
+head(ces2019_web)
+```
+
+# Reference
+Canadian election drew nearly 66% of registered voters | CBC News. (2019, October 22). Retrieved from https://www.cbc.ca/news/canada/voter-turnout-2019-1.5330207
